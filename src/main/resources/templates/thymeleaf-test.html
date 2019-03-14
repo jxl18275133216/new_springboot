@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <h1 th:text="${host}">HelloWorld</h1>
+    <a th:href="@{//www.baidu.com}" th:if="${host == null}">test</a>
+    <div th:switch="${host}">
+        <p th:case="1">host is 1</p>
+        <p th:case="${host}"><span th:text="'host is:'+${host}">11111</span></p>
+    </div>
+    <div th:each="arr:${Arry}">
+        <!--/*@thymesVar id="arr" type="java"*/-->
+        <p th:text="${arr}">111</p>
+    </div>
+</body>
+</html>

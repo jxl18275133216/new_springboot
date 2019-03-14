@@ -1,0 +1,27 @@
+.nav{
+    height: 45px;
+    background-color: red;
+    position: relative;
+}
+.nav-ul{
+    margin: auto;
+    line-height: 45px;
+}
+.nav-li{
+    float: left;
+    margin-left: 45px;
+    line-height: 45px;
+}
+.sub-nav{
+    height: 40px;
+    background-color:royalblue;
+    position: absolute;
+    top: 45px;
+}
+.sub-ul{
+}
+.sub-li{
+    float: left;
+    line-height: 40px;
+    margin: auto 20px; /**/
+}
