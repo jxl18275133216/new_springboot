@@ -1,16 +1,39 @@
 <div class="nav" th:fragment="nav">
     <ul class="nav-ul">
-        <li class="nav-li"><a href="/">首页</a></li>
         <li class="nav-li">
-            <a href="//www.acfun.cn">文章</a>
-            <div class="sub-nav">
+            <div class="nav-a">
+                <a href="/">首页</a>
+            </div>
+        </li>
+        <li class="nav-li">
+            <div class="nav-a">
+                <a href="/Article">文章</a>
+            </div>
+            <div class="sub-nav hidden">
                 <ul class="sub-ul">
-                    <li class="sub-li">1</li>
-                    <li class="sub-li">2</li>
+                    <li class="sub-li">
+                        <a href="/Article/aboutStudy" class="sub-a">学习</a>
+                    </li>
+                    <li class="sub-li">
+                        <a href="/Article/aboutGame" class="sub-a">娱乐</a>
+                    </li>
                 </ul>
             </div>
         </li>
-        <li class="nav-li">音乐</li>
-        <li class="nav-li"></li>
+        <li class="nav-li">
+            <div class="nav-a">
+                <a href="/Muisc">音乐</a>
+            </div>
+            <div class="sub-nav hidden">
+                <ul class="sub-ul">
+                    <li class="sub-li">
+                        <a href="/Music/CH" class="sub-a">国语</a>
+                    </li>
+                    <li class="sub-li">
+                        <a href="/Music/EN" class="sub-a">英文</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </div>

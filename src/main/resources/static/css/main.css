@@ -18,3 +18,9 @@ li{
     list-style: none;
     padding: 0px;
 }
+.hidden{
+    display: none;
+}
+.block{
+    display: block;
+}

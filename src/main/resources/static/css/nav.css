@@ -1,7 +1,12 @@
 .nav{
     height: 45px;
+    width: 90%;
+    margin: 0 auto;
     background-color: red;
     position: relative;
+}
+.nav-a{
+    border: 1px solid black;
 }
 .nav-ul{
     margin: auto;
@@ -9,14 +14,18 @@
 }
 .nav-li{
     float: left;
-    margin-left: 45px;
-    line-height: 45px;
+    text-align: center;
+    width: 126px;
 }
+/*默认应该全部隐藏，使用js控制，当鼠标悬浮在一级nav时候，显示对应的二级nav*/
 .sub-nav{
+    /*display: none;*/
     height: 40px;
+    width:80%;
     background-color:royalblue;
     position: absolute;
     top: 45px;
+    left:10%;
 }
 .sub-ul{
 }
