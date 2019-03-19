@@ -1,11 +1,3 @@
-function getAllByClass(e) {
-    return document.getElementsByClassName("e");
-}
-function getOneByClass(e1,e2) {
-    var a = document.getElementsByClassName("e1")[e2];
-    return a;
-}
-
 function showSubNav() {
     var nav = document.getElementsByClassName("nav-li");
     for (var i = 0;i<nav.length;i++){
@@ -20,14 +12,7 @@ function showSubNav() {
         });
     }
 }
-function hideAll() {
-    var ul = document.getElementsByClassName("nav-ul");
-    ul[0].addEventListener("mouseout",function (ev) {
-       for (var i = 0,arr = getAllByClass("sub-nav");i<arr.length;i++){
-           arr[i].className = "sub-nav hidden";
-       }
-    });
-}
+
 function sibling(elm) {
     var a = [];
     var p = elm.parentNode.children;
@@ -36,5 +21,14 @@ function sibling(elm) {
     }
     return a;
 }
-showSubNav();
-hideAll();
+function useNav() {
+    var navUl =document.getElementsByClassName("nav-ul")[0];
+    navUl.addEventListener("mouseover",showSubNav);
+    navUl.addEventListener("mouseout",function (evt) {
+        var a = document.getElementsByClassName("sub-nav");
+        for (var i = 0;i<a.length;i++){
+            a[i].className = "sub-nav hidden";
+        }
+    })
+}
+useNav();
