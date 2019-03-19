@@ -1,3 +1,16 @@
+window.onload = function aboutNav() {
+    useNav();
+}
+function useNav(){
+	var navUl =document.getElementsByClassName("nav-ul")[0];
+    navUl.addEventListener("mouseover",showSubNav);
+    navUl.addEventListener("mouseout",function (evt) {
+        var a = document.getElementsByClassName("sub-nav");
+        for (var i = 0;i<a.length;i++){
+            a[i].className = "sub-nav hidden";
+        }
+    })
+}
 function showSubNav() {
     var nav = document.getElementsByClassName("nav-li");
     for (var i = 0;i<nav.length;i++){
@@ -21,14 +34,4 @@ function sibling(elm) {
     }
     return a;
 }
-function useNav() {
-    var navUl =document.getElementsByClassName("nav-ul")[0];
-    navUl.addEventListener("mouseover",showSubNav);
-    navUl.addEventListener("mouseout",function (evt) {
-        var a = document.getElementsByClassName("sub-nav");
-        for (var i = 0;i<a.length;i++){
-            a[i].className = "sub-nav hidden";
-        }
-    })
-}
-useNav();
+
