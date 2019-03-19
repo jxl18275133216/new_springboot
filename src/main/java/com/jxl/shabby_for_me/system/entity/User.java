@@ -3,40 +3,40 @@ package com.jxl.shabby_for_me.system.entity;
 import java.util.Map;
 
 public class User {
-    String name;
-    Integer age;
-    String agent;
-    Map<String,Object> map;
+    Integer userid;
+    String username;
+    String userdep;
 
-    public String getName() {
-        return name;
+    public Integer getUserid() {
+        return userid;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getAgent() {
-        return agent;
+    public String getUserdep() {
+        return userdep;
     }
 
-    public void setAgent(String agent) {
-        this.agent = agent;
+    public void setUserdep(String userdep) {
+        this.userdep = userdep;
     }
 
-    public Map<String, Object> getMap() {
-        return map;
-    }
-
-    public void setMap(Map<String, Object> map) {
-        this.map = map;
+    @Override
+    public String toString() {
+        return "User{" +
+                "userid=" + userid +
+                ", username='" + username + '\'' +
+                ", userdep='" + userdep + '\'' +
+                '}';
     }
 }

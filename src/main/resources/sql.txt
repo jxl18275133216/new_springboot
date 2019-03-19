@@ -1,0 +1,6 @@
+CREATE TABLE `shabby`.`Untitled`  (
+  `userid` int(9) NOT NULL COMMENT '用户ID',
+  `username` varchar(12) CHARACTER SET utf8 NOT NULL COMMENT '用户名',
+  `userpwd` varchar(20) CHARACTER SET utf8 NOT NULL COMMENT '用户密码',
+  `userdep` varchar(5) CHARACTER SET utf8 NOT NULL COMMENT '用户层'
+) ENGINE = InnoDB AUTO_INCREMENT = 1;

@@ -1,0 +1,10 @@
+Effective Java（有效的Java）
+ Clean Code
+ Java Concurrency in Practice（Java并发编程实战）
+ Head First Design Patterns
+  Spring in Action
+  Test Driven（测试驱动）
+  The Definitive Guide to Java Performance（Java性能权威指南）
+  Head First Java
+  Head First Object-Oriented Analysis and Design（面向对象分析和设计）
+  Java: A Beginner's Guide（Java初学者指南）

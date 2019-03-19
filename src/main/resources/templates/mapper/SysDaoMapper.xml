@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxl.shabby_for_me.system.dao.SysDao">
+    <!--根据id查询-->
+    <select id="findById"
+            parameterType="java.lang.Integer"
+            resultType="com.jxl.shabby_for_me.system.entity.User">
+        select
+          userid,
+          username,
+          userdep
+        from
+          user
+        where
+          userid = #{id}
+    </select>
+    <!--根据name查询-->
+    <select id="findByName"
+            parameterType="java.lang.String"
+            resultType="com.jxl.shabby_for_me.system.entity.User">
+        select
+          userid,
+          username,
+          userdep
+        from
+          user
+        where
+          username = ${name}
+    </select>
+</mapper>
