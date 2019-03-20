@@ -1,6 +1,12 @@
 <div class="header" th:fragment="header">
-    <p>Welcome,<span th:text="${username}">test</span></p>
-    <p th:if="${username} == 'admin'" class="loginStatus">
+    <p>Welcome,
+        <span th:if="${user} == null">Guest</span>
+        <span th:unless="${user} == null"><span th:text="${user.username}"></span></span>
+    </p>
+    <p th:if="${user} == null" class="loginStatus">
         <a id="regist" href="/regist">注册</a>/<a id="login" href="/login">登录</a>
+    </p>
+    <p th:if="${user} != null">
+        <span th:text="${user.username}">Username,</span><span>level:</span><span th:text="${user.level}">9</span>
     </p>
 </div>

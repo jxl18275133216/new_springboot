@@ -1,6 +1,7 @@
 CREATE TABLE `shabby`.`Untitled`  (
-  `userid` int(9) NOT NULL COMMENT '用户ID',
-  `username` varchar(12) CHARACTER SET utf8 NOT NULL COMMENT '用户名',
-  `userpwd` varchar(20) CHARACTER SET utf8 NOT NULL COMMENT '用户密码',
-  `userdep` varchar(5) CHARACTER SET utf8 NOT NULL COMMENT '用户层'
-) ENGINE = InnoDB AUTO_INCREMENT = 1;
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `username` varchar(15) NOT NULL,
+  `userpwd` varchar(20) NULL,
+  `level` int(1) NOT NULL COMMENT '用户级别:\r\n0-root\r\n1-manager\r\n8-普通注册用户\r\n9-临时用户',
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB CHARACTER SET = utf8;

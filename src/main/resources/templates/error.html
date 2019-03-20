@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Error</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
-    <div th:replace="common/menu::menu"></div>
+    <div th:replace="common/header::header"></div>
+    <div th:replace="common/nav::nav"></div>
     <h3>Something Erroe!</h3>
     <p>Please Try Again!</p>
     <div th:replace="common/footer::footer"></div>

@@ -3,16 +3,17 @@ package com.jxl.shabby_for_me.system.entity;
 import java.util.Map;
 
 public class User {
-    Integer userid;
+    Integer id;
     String username;
-    String userdep;
+    String userpwd;
+    Integer level;
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -23,20 +24,29 @@ public class User {
         this.username = username;
     }
 
-    public String getUserdep() {
-        return userdep;
+    public String getUserpwd() {
+        return userpwd;
     }
 
-    public void setUserdep(String userdep) {
-        this.userdep = userdep;
+    public void setUserpwd(String userpwd) {
+        this.userpwd = userpwd;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userid=" + userid +
+                "id=" + id +
                 ", username='" + username + '\'' +
-                ", userdep='" + userdep + '\'' +
+                ", userpwd='" + userpwd + '\'' +
+                ", level=" + level +
                 '}';
     }
 }

@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>注册</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div>
-    <form action="">
-        <span>账户名:</span><input type="text" id="regist-name">
-        <span>密码:</span><input type="password" id="regist-pwd">
-        <submit></submit>
+    <form id="regist-form" action="/processRegist.do" method="get">
+        <p><span>账户名:</span><input type="text" id="username"></p>
+        <p><span>密码:</span><input type="password" id="userpwd"></p>
+        <p class="hidden"><span></span><input type="text" id="level" value="8"></p>
     </form>
+    <input type="button" onclick="checkoutRegist()" value="确定"></input>
 </div>
-
 </form>
+<script src="js/regist.js"></script>
 </body>
 </html>

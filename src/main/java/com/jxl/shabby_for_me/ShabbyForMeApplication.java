@@ -8,5 +8,4 @@ public class ShabbyForMeApplication {
     public static void main(String[] args) {
         SpringApplication.run(ShabbyForMeApplication.class, args);
     }
-
 }

@@ -2,12 +2,14 @@ package com.jxl.shabby_for_me.system.controller;
 
 import com.jxl.shabby_for_me.system.entity.User;
 import com.jxl.shabby_for_me.system.service.SysService;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Arrays;
 
@@ -19,21 +21,38 @@ public class SysIndexController {
     public String toIndex(ModelMap map, HttpSession session){
         User user = (User) session.getAttribute("user");
         String username = "";
-        if (user == null) {
-            username = "admin";
-            System.out.println("session-id:"+session.getId());
-        }else{
+        if (user != null){
             username = user.getUsername();
+            map.addAttribute("user",user);
+        }else{
+            username = "Guest";
         }
-        map.addAttribute("username",username);
         return "index";
     }
-    @RequestMapping("/regist")
-    public String toRegist(ModelMap map){
+    @RequestMapping("/regist.do")
+    public String doSaveUser(ModelMap map){
         return "regist";
     }
     @RequestMapping("/login")
     public String toLogin(ModelMap map){
         return "login";
+    }
+
+    @RequestMapping(value = "/processRegist.do")
+    public String doProcessRegistUser(User user,HttpSession session){
+        System.out.println("user:"+user.toString());
+        sysService.saveUser(user);
+        session.setAttribute("user",user);
+        return "redirect:/";
+    }
+    @RequestMapping("/processCheckRegist.do")
+    public User doCheckRegist(HttpServletRequest request){
+        String username = request.getParameter("username");
+        User user = sysService.findByName(username);
+        if (username == user.getUsername()){
+            return user;
+        }else{
+            return null;
+        }
     }
 }

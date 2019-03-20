@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxl.shabby_for_me.system.dao.SysUserDao">
+    <!--保存用户-->
+    <insert id="insertUser"
+            parameterType="com.jxl.shabby_for_me.system.entity.User"
+            >
+        insert into
+        user
+        (username,userpwd,level)
+        values
+        (#{username},#{userpwd},#{level})
+    </insert>
+</mapper>

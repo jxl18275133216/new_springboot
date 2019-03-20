@@ -6,9 +6,8 @@
             parameterType="java.lang.Integer"
             resultType="com.jxl.shabby_for_me.system.entity.User">
         select
-          userid,
-          username,
-          userdep
+          id,
+          username
         from
           user
         where
@@ -19,12 +18,11 @@
             parameterType="java.lang.String"
             resultType="com.jxl.shabby_for_me.system.entity.User">
         select
-          userid,
-          username,
-          userdep
+          id,
+          username
         from
           user
         where
-          username = ${name}
+          username = #{name}
     </select>
 </mapper>
