@@ -4,7 +4,7 @@
         <span th:unless="${user} == null"><span th:text="${user.username}"></span></span>
     </p>
     <p th:if="${user} == null" class="loginStatus">
-        <a id="regist" href="/regist">注册</a>/<a id="login" href="/login">登录</a>
+        <a id="regist" href="/regist.do">注册</a>/<a id="login" href="/login.do">登录</a>
     </p>
     <p th:if="${user} != null">
         <span th:text="${user.username}">Username,</span><span>level:</span><span th:text="${user.level}">9</span>

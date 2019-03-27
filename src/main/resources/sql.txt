@@ -1,4 +1,4 @@
-CREATE TABLE `shabby`.`Untitled`  (
+CREATE TABLE `shabby`.`user`  (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `username` varchar(15) NOT NULL,
   `userpwd` varchar(20) NULL,

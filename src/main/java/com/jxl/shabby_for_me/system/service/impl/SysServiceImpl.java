@@ -28,6 +28,7 @@ public class SysServiceImpl implements SysService {
         if (user == null){
             System.out.println("用户不能为空");
         }
+        System.out.println("user:"+user.toString());
         userDao.insertUser(user);
         /*int i = userDao.insertUser(user);
         if (i == -1){

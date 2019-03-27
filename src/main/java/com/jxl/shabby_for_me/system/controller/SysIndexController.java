@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -40,16 +41,17 @@ public class SysIndexController {
 
     @RequestMapping(value = "/processRegist.do")
     public String doProcessRegistUser(User user,HttpSession session){
-        System.out.println("user:"+user.toString());
         sysService.saveUser(user);
-        session.setAttribute("user",user);
         return "redirect:/";
     }
     @RequestMapping("/processCheckRegist.do")
+    @ResponseBody
     public User doCheckRegist(HttpServletRequest request){
         String username = request.getParameter("username");
+        System.out.println("username:"+username);
         User user = sysService.findByName(username);
-        if (username == user.getUsername()){
+        System.out.println(user == null);
+        if (user != null){
             return user;
         }else{
             return null;
