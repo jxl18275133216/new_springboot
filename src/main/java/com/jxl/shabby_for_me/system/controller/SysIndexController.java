@@ -39,22 +39,5 @@ public class SysIndexController {
         return "login";
     }
 
-    @RequestMapping(value = "/processRegist.do")
-    public String doProcessRegistUser(User user,HttpSession session){
-        sysService.saveUser(user);
-        return "redirect:/";
-    }
-    @RequestMapping("/processCheckRegist.do")
-    @ResponseBody
-    public User doCheckRegist(HttpServletRequest request){
-        String username = request.getParameter("username");
-        System.out.println("username:"+username);
-        User user = sysService.findByName(username);
-        System.out.println(user == null);
-        if (user != null){
-            return user;
-        }else{
-            return null;
-        }
-    }
+
 }
