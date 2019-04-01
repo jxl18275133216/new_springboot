@@ -30,6 +30,10 @@ public class SysIndexController {
         }
         return "index";
     }
+    @RequestMapping("/user")
+    public String userMenu(){
+        return "user/user";
+    }
     @RequestMapping("/regist.do")
     public String doSaveUser(ModelMap map){
         return "regist";

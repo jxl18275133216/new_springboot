@@ -2,12 +2,25 @@
     height: 36px;
     width: 100%;
     background-color: beige;
-    padding: 15px 15px;
+    padding: 20px 20px;
+    position: relative;
 }
-.loginStatus{
-    top:20px;
-    right: 0px;
+.header .logo{
+    width: 66%;
+}
+.header .user-status{
     height: 20px;
     width: 100px;
     float: right;
+    position: absolute;
+    top: 45px;
+    right: 39px;
+}
+.header .user-info{
+    height: 20px;
+    width: 100px;
+    float: right;
+    position: absolute;
+    top: 45px;
+    right: 39px;
 }

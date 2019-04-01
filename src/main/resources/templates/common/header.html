@@ -1,12 +1,13 @@
 <div class="header" th:fragment="header">
-    <p>Welcome,
-        <span th:if="${user} == null">Guest</span>
-        <span th:unless="${user} == null"><span th:text="${user.username}"></span></span>
-    </p>
-    <p th:if="${user} == null" class="loginStatus">
-        <a id="regist" href="/regist.do">注册</a>/<a id="login" href="/login.do">登录</a>
-    </p>
-    <p th:if="${user} != null">
-        <span th:text="${user.username}">Username,</span><span>level:</span><span th:text="${user.level}">9</span>
-    </p>
+    <div class="logo">
+        <h1>
+            MY HOME
+        </h1>
+    </div>
+    <div class="user-status">
+        <a href="" class="btn-block">登录</a>/<a href="" class="btn-block">注册</a>
+    </div>
+    <div class="user-info hidden">
+        <a href="" class="btn-group">个人信息</a>
+    </div>
 </div>

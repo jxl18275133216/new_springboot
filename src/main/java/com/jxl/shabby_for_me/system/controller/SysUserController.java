@@ -12,13 +12,36 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("/user")
 public class SysUserController {
     @Resource
     private SysService sysService;
-    @RequestMapping("saveUser.do")
+    //增
+    @RequestMapping("addUser.do")
     public String addUser(User user){
-        sysService.saveUser(user);
+        sysService.addUser(user);
         return "redirect:/";
+    }
+    //删
+    @RequestMapping("/deleteUser.do")
+    public String deleteUser(){
+        return "";
+    }
+    //改
+    @RequestMapping("/modifyUser.do")
+    public String modifyUser(){
+        return "";
+    }
+    //查
+    @RequestMapping("/findUser.do")
+    @ResponseBody
+    public User findUser(){
+        User user = new User();
+        user.setUsername("jiashunhao");
+        user.setId(9999);
+        user.setUserpwd("123456");
+        user.setLevel(0);
+        return user;
     }
     @RequestMapping(value = "/processRegist.do")
     public String doProcessRegistUser(){

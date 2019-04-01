@@ -1,7 +1,7 @@
-window.onload = function aboutNav() {
-    useNav();
-}
-function useNav(){
+$(document).ready(function () {
+    selectNav();
+})
+function selectNav(){
 	var navUl =document.getElementsByClassName("nav-ul")[0];
     navUl.addEventListener("mouseover",showSubNav);
     navUl.addEventListener("mouseout",function (evt) {

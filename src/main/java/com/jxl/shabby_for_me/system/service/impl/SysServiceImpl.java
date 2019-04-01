@@ -20,7 +20,7 @@ public class SysServiceImpl implements SysService {
     public User findByName(String str){
         return dao.findByName(str);
     }
-    public void saveUser(User user){
+    public void addUser(User user){
         if (userDao == null){
             System.out.println("userDao is null");
             return;
@@ -29,7 +29,7 @@ public class SysServiceImpl implements SysService {
             System.out.println("用户不能为空");
         }
         System.out.println("user:"+user.toString());
-        userDao.insertUser(user);
+        userDao.insertObject(user);
         /*int i = userDao.insertUser(user);
         if (i == -1){
             System.out.println("新用户保存失败");
