@@ -19,7 +19,7 @@ public class SysUserController {
     //增
     @RequestMapping("addUser.do")
     public String addUser(User user){
-        sysService.addUser(user);
+        sysService.insertUser(user);
         return "redirect:/";
     }
     //删
@@ -43,22 +43,20 @@ public class SysUserController {
         user.setLevel(0);
         return user;
     }
-    @RequestMapping(value = "/processRegist.do")
-    public String doProcessRegistUser(){
+    @RequestMapping("/processRegist.do")
+    public String doProcessRegistUser(User user){
 
         return "redirect:/";
     }
     @RequestMapping("/processCheckRegist.do")
     @ResponseBody
-    public User doCheckRegist(HttpServletRequest request){
-        String username = request.getParameter("username");
-        System.out.println("username:"+username);
+    public boolean doCheckRegist(String username){
+        System.out.println(username);
         User user = sysService.findByName(username);
-        System.out.println(user == null);
         if (user != null){
-            return user;
+            return false;
         }else{
-            return null;
+            return true;
         }
     }
 }

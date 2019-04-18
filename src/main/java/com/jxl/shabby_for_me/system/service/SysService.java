@@ -9,5 +9,5 @@ import java.util.Map;
 public interface SysService{
     User findById(Integer userid);
     User findByName(String username);
-    void addUser(User user);
+    void insertUser(User user);
 }

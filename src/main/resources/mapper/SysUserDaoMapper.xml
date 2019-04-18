@@ -7,8 +7,8 @@
             >
         insert into
         user
-        (username,userpwd,level)
+        (username,userpwd,createtime)
         values
-        (#{username},#{userpwd},#{level})
+        (#{username},#{userpwd},current_timestamp )
     </insert>
 </mapper>

@@ -5,6 +5,6 @@ import com.jxl.shabby_for_me.system.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface SysUserDao extends BasicDao<User> {
-
+public interface SysUserDao{
+    int insertUser(User obj);
 }
