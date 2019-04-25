@@ -7,7 +7,7 @@ CREATE TABLE `shabby`.`user`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8;
 
 CREATE TABLE `shabby`.`usergrade`  (
-  `id` int(0) NOT NULL COMMENT '唯一',
+  `id` int(5) NOT NULL COMMENT '唯一',
   `grade` int(1) NOT NULL COMMENT '0--root\r\n1--管理员\r\n8--普通用户\r\n9--游客',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8;

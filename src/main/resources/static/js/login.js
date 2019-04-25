@@ -1,15 +1,10 @@
-window.onload = function () {
-    var theinput = document.getElementById("login-pwd");
-    console.log(theinput)
-    var userid = theinput.getAttribute("value");
-    if (userid == ""){
-        console.log(userid)
-    } else{
-        console.log(11111111)
+function checkLogin() {
+    var username = document.getElementById('login-name').value;
+    var userpwd = document.getElementById('login-pwd').value;
+    var form = document.getElementById('login-form');
+    alert(username+":"+userpwd+":"+form);
+    //校验逻辑
+    if(true){
+        form.submit();
     }
-
-    findById(userid);
-}
-function findById(userid) {
-    console.log(userid);
 }

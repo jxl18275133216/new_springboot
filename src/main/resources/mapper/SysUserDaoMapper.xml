@@ -7,8 +7,45 @@
             >
         insert into
         user
-        (username,userpwd,createtime)
+        (username,userpwd,createtime,modifytime)
         values
-        (#{username},#{userpwd},current_timestamp )
+        (#{username},#{userpwd},now(),now() )
     </insert>
+    <!--根据id查询-->
+    <select id="findById"
+            parameterType="java.lang.Integer"
+            resultType="com.jxl.shabby_for_me.system.entity.User">
+        select
+          id,
+          username,
+          createtime,
+          modifytime
+        from
+          user
+        where
+          userid = #{id}
+    </select>
+    <!--根据name查询-->
+    <select id="findByName"
+            parameterType="java.lang.String"
+            resultType="com.jxl.shabby_for_me.system.entity.User">
+        select
+          id,
+          username,
+          createtime,
+          modifytime
+        from
+          user
+        where
+          username = #{name}
+          and
+          userpwd = #{pwd}
+    </select>
+    <select id="findAll"
+            resultType="com.jxl.shabby_for_me.system.entity.User">
+        select
+        *
+        from
+        user
+    </select>
 </mapper>

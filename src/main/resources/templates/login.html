@@ -6,20 +6,12 @@
 </head>
 <body>
     <div class="loginForm">
-        <form action="">
-            <div>
-                <span>用户名:</span><input type="text" id="login-name">
-            </div>
-            <div>
-                <span>密码:</span><input type="password" id="login-pwd">
-            </div>
-            <div>
-                <button id="login-btn">登录</button>
-            </div>
-            <div>
-                <button id="pwd-btn">忘记密码</button>
-            </div>
+        <form action="/user/findUser.do" id="login-form" method="post">
+            <span>用户名:</span><input type="text" id="login-name" name="username"/>
+            <span>密码:</span><input type="password" id="login-pwd" name="userpwd"/>
         </form>
+        <button id="login-btn" onclick="checkLogin()">登录</button>
+        <button id="pwd-btn">忘记密码</button>
     </div>
     <script src="js/login.js"></script>
 </body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div th:replace="common/header::header"></div>
+<div th:replace="common/nav::nav"></div>
+<div class="contant">
+    <div style="width: 100%;height: 500px;background-color: aqua">
+        <table>
+            <tr th:each="list:${UserList}">
+                <td th:text="${list.username}"></td>
+                <td th:text="${list.userpwd}"></td>
+                <td th:text="${list.createtime}"></td>
+                <td th:text="${list.modifytime}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div th:replace="common/footer :: footer"></div>
+</body>
+</html>

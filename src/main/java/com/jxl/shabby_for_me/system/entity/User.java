@@ -1,12 +1,14 @@
 package com.jxl.shabby_for_me.system.entity;
 
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class User {
     Integer id;
     String username;
     String userpwd;
-    Integer level;
+    Date createtime;
+    Date modifytime;
 
     public Integer getId() {
         return id;
@@ -32,12 +34,22 @@ public class User {
         this.userpwd = userpwd;
     }
 
-    public Integer getLevel() {
-        return level;
+    public String getCreatetime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD HH:mm:ss");
+        return sdf.format(createtime);
     }
 
-    public void setLevel(Integer level) {
-        this.level = level;
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public String getModifytime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD HH:mm:ss");
+        return sdf.format(modifytime);
+    }
+
+    public void setModifytime(Date modifytime) {
+        this.modifytime = modifytime;
     }
 
     @Override
@@ -46,7 +58,8 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", userpwd='" + userpwd + '\'' +
-                ", level=" + level +
+                ", createtime=" + createtime +
+                ", modifytime=" + modifytime +
                 '}';
     }
 }

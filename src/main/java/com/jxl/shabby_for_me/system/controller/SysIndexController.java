@@ -1,33 +1,30 @@
 package com.jxl.shabby_for_me.system.controller;
 
 import com.jxl.shabby_for_me.system.entity.User;
-import com.jxl.shabby_for_me.system.service.SysService;
-import org.springframework.http.HttpRequest;
+import com.jxl.shabby_for_me.system.service.SysUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Arrays;
 
 @Controller
 public class SysIndexController {
     @Resource
-    private SysService sysService ;
+    private SysUserService sysUserService;
     @RequestMapping("/")
-    public String toIndex(ModelMap map, HttpSession session){
-        User user = (User) session.getAttribute("user");
-        String username = "";
-        if (user != null){
-            username = user.getUsername();
-            map.addAttribute("user",user);
-        }else{
-            username = "Guest";
+    public String toIndex(ModelMap map, HttpServletRequest request, HttpServletResponse response){
+        HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("user");
+        if (user == null){
+            map.addAttribute("status","请登录");
+        }else {
+            map.addAttribute("status","已经等了");
         }
+        //检查登录状态
         return "index";
     }
     @RequestMapping("/user")
@@ -38,7 +35,7 @@ public class SysIndexController {
     public String doSaveUser(ModelMap map){
         return "regist";
     }
-    @RequestMapping("/login")
+    @RequestMapping("/login.do")
     public String toLogin(ModelMap map){
         return "login";
     }
