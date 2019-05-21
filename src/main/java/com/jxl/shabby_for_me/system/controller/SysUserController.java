@@ -2,11 +2,17 @@ package com.jxl.shabby_for_me.system.controller;
 
 import com.jxl.shabby_for_me.system.entity.User;
 import com.jxl.shabby_for_me.system.service.SysUserService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
+import jdk.internal.dynalink.linker.LinkerServices;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -15,10 +21,11 @@ public class SysUserController {
     private SysUserService sysUserService;
     //增
     @RequestMapping("addUser.do")
-    public String addUser(User user){
-        sysUserService.insertUser(user);
-        //return "redirect:/";
-        return "/findUser.do";
+    public String addUser(User user, HttpServletRequest request,ModelMap map){
+        sysUserService.saveObject(user);
+        HttpSession session = request.getSession();
+        session.setAttribute("user",user);
+        return "redirect:/";
     }
     //删
     @RequestMapping("/deleteUser.do")
@@ -33,11 +40,10 @@ public class SysUserController {
     //查
     @RequestMapping("/findUser.do")
     @ResponseBody
-    public User findUser(User user){
+    public List<User> findUser(User user){
         System.out.println(user.toString());
-        User newUser = sysUserService.findByName(user.getUsername(),user.getUserpwd());
-        System.out.println(newUser.toString());
-        return newUser;
+        List<User> users = sysUserService.findUserById(1);
+        return users;
     }
     //
     @RequestMapping("/processRegist.do")
@@ -49,8 +55,8 @@ public class SysUserController {
     @ResponseBody
     public boolean doCheckRegist(String username,String userpwd){
         System.out.println(username);
-        User user = sysUserService.findByName(username,userpwd);
-        if (user != null){
+        List<User> users = sysUserService.findUserById(1);
+        if (users != null){
             return false;
         }else{
             return true;

@@ -9,14 +9,15 @@ import java.util.List;
 import java.util.Map;
 
 @Mapper
-public interface SysUserDao{
-    int insertUser(User obj);
-    List<User> findAll();
-    User findById(
-            @Param("id")Integer userid
+public interface SysUserDao extends BasicDao<User>{
+    int getRowCount(
+            @Param("username")String username);
+    List<User> findPageObjects(
+            @Param("username")String username,
+            @Param("stratIndex")Integer startIndex,
+            @Param("pageSize")Integer pageSize
     );
-    User findByName(
-            @Param("name")String username,
-            @Param("pwd")String userpwd
+    User findObjectById(
+            @Param("id")Integer userid
     );
 }

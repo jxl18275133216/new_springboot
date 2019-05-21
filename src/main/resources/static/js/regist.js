@@ -1,8 +1,7 @@
 function checkoutRegist() {
     var username = document.getElementsByName("username")[0].value;
     var userpwd = document.getElementsByName("userpwd")[0].value;
-    var level = document.getElementsByName("level")[0].value;
-    console.log(username+":"+userpwd+":"+level);
+    console.log(username+":"+userpwd);
     var checkResutl;
     /*
     对输入的参数进行检查，检查通过才提交

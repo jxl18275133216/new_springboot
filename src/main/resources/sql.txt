@@ -1,10 +1,11 @@
 CREATE TABLE `shabby`.`user`  (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `username` varchar(15) NOT NULL,
-  `userpwd` varchar(20) NULL,
-  `createtime` timestamp(6) NOT NULL,
+  `userpwd` varchar(20) NOT NULL,
+  `creattime` timestamp(6) NOT NULL,
+  `modifytime` timestamp(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE = InnoDB CHARACTER SET = utf8;
+) ENGINE = InnoDB CHARACTER SET = utf8 STORAGE DEFAULT;
 
 CREATE TABLE `shabby`.`usergrade`  (
   `id` int(5) NOT NULL COMMENT '唯一',
@@ -20,3 +21,11 @@ CREATE TABLE `shabby`.`music`  (
   `binary_data` longblob NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8;
+
+CREATE TABLE `shabby`.`user_level`  (
+  `id` int(10) NOT NULL,
+  `username` varchar(15) NOT NULL,
+  `userlevel` int(1) NOT NULL COMMENT '0-root_admin\r\n1_admin\r\n2_\r\n3_\r\n4_\r\n5_\r\n6_\r\n7_Ordinary users\r\n8_Waiting for Audit User(new user)\r\n9_Temporary users\r\n',
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB CHARACTER SET = utf8;
+

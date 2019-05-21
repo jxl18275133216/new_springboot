@@ -1,13 +1,15 @@
-<div class="header" th:fragment="header">
+<div class="header" th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
     <div class="logo">
         <h1>
             MY HOME
         </h1>
     </div>
-    <div class="user-status">
+    <div class="user-status" th:if="${user} == null">
         <a href="/login.do" class="btn-block">登录</a>/<a href="/regist.do" class="btn-block">注册</a>
     </div>
-    <div class="user-info hidden">
-        <a href="" class="btn-group">个人信息</a>
+    <div class="user-info" th:if="${user} != null">
+        <a href="" class="btn-group">
+            <span th:text="${user.username}">用户名</span>
+        </a>
     </div>
 </div>
