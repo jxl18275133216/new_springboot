@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
+    <div th:replace="common/header::header"/>
+    <div th:replace="common/nav::nav"/>
     <div class="loginForm">
         <form action="/user/findUser.do" id="login-form" method="post">
             <span>用户名:</span><input type="text" id="login-name" name="username"/>
@@ -13,6 +18,7 @@
         <button id="login-btn" onclick="checkLogin()">登录</button>
         <button id="pwd-btn">忘记密码</button>
     </div>
+    <div th:replace="common/footer::footer"/>
     <script src="js/login.js"></script>
 </body>
 </html>

@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <title>注册</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
-<div>
-    <form id="regist-form" action="/user/addUser.do" method="post">
-        <p><span>账户名:</span><input type="text" name="username"/></p>
-        <p><span>密码:</span><input type="password" name="userpwd"/></p>
-    </form>
-    <input type="button" onclick="checkoutRegist()" value="确定"/>
-</div>
-</form>
+    <div th:replace="common/header::header"></div>
+    <div th:replace="common/nav::nav"></div>
+    <div class="registForm">
+        <form id="regist-form" action="/user/addUser.do" method="post">
+            <p><span>账户名:</span><input type="text" name="username"/></p>
+            <p><span>密码:</span><input type="password" name="userpwd"/></p>
+        </form>
+        <input type="button" onclick="checkoutRegist()" value="确定"/>
+    </div>
+    <div th:replace="common/footer::footer"></div>
 <script src="js/regist.js"></script>
 </body>
 </html>

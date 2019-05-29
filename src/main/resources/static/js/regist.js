@@ -47,5 +47,5 @@ function findUserByName_ajax(username) {
 }
 
 var regist = new Vue(
-    el:#
+
 );
