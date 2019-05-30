@@ -10,14 +10,19 @@
 <body>
     <div th:replace="common/header::header"></div>
     <div th:replace="common/nav::nav"></div>
+    <div th:replace="common/navbar-left::navbar-left"></div>
     <div class="contant">
-        <div style="width: 100%;height: 500px;background-color: aqua">
-            <p th:text="${status}">主要内容</p>
+        <div class="theLast" th:if="${lastModify} != null">
+            最后一次更新的数据:
+            <span class="nomal" th:href="@{lastModifyUrl}"/>
+        </div>
+        <div style="width: 100%;background-color: aqua">
+            <button name="addArea" onclick="addItem()">+</button>
         </div>
     </div>
     <div th:replace="common/footer :: footer"></div>
     <button>111</button>
     <script type="text/javascript" src="Vue/Vue.js"></script>
-    <script type="text/javascript" src="js/nav.js"></script>
+
 </body>
 </html>

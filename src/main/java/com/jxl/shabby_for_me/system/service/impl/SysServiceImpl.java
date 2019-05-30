@@ -37,6 +37,10 @@ public class SysServiceImpl implements SysUserService {
         return null;
     }
     @Override
+    public User findUserByName(String username,String userpwd){
+        return userDao.findObjectByName(username,userpwd);
+    };
+    @Override
     public Map<String,Object> findPageObject(String username,Integer currentPage){
         return null;
     }

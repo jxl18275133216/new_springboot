@@ -20,4 +20,8 @@ public interface SysUserDao extends BasicDao<User>{
     User findObjectById(
             @Param("id")Integer userid
     );
+    User findObjectByName(
+            @Param("username")String username,
+            @Param("userpwd")String userpwd
+    );
 }

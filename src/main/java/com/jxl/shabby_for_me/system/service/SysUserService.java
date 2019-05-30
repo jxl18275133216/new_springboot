@@ -11,5 +11,6 @@ public interface SysUserService {
     void saveObject(User user);
     void removeObject(Integer userid);
     List<User> findUserById(Integer userid);
+    User findUserByName(String username,String userpwd);
     Map<String,Object> findPageObject(String username,Integer currentPage);
 }

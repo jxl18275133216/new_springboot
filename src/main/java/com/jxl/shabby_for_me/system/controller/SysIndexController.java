@@ -19,10 +19,6 @@ public class SysIndexController {
     public String userMenu(){
         return "user/user";
     }
-    @RequestMapping("/regist.do")
-    public String doSaveUser(ModelMap map){
-        return "regist";
-    }
     @RequestMapping("/login.do")
     public String toLogin(ModelMap map){
         return "login";

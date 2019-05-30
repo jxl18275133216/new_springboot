@@ -1,12 +1,9 @@
 .nav{
     height: 45px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    background-color: red;
+    background-color: #ff1657;
     position: relative;
-}
-.nav-a{
-    border: 1px solid black;
 }
 .nav-ul{
     margin: auto;
@@ -22,7 +19,7 @@
     width:80%;
     top: 45px;
     left:10%;
-    background-color:royalblue;
+    background-color: #5f9ee1;
     position: absolute;
 }
 .nav-li:hover .sub-nav{
@@ -34,4 +31,16 @@
     float: left;
     line-height: 40px;
     margin: auto 20px; /**/
+}
+.navbar-left{
+    position: absolute;
+    height: 400px;
+    width: 100px;
+    top: 200px;
+    left: -90px;
+    background-color: white;
+}
+.navbar-left:hover{
+    left: 15px;
+    transition: left 2s;
 }

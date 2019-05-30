@@ -58,4 +58,22 @@
         </where>
         LIMIT #{startIndex},#{pageSize}
     </select>
+    <select id="findObjectByName"
+            resultType="com.jxl.shabby_for_me.system.entity.User">
+        select
+        id,
+        username,
+        userpwd,
+        createtime,
+        modifytime
+        from
+        user
+        <where>
+            <if test="username !=null and username != ''">
+                username = #{username}
+            </if>
+                and
+                userpwd = #{userpwd}
+        </where>
+    </select>
 </mapper>
