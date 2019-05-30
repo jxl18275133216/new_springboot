@@ -8,8 +8,9 @@ import java.util.List;
 import java.util.Map;
 @Service
 public interface SysUserService {
-    User findById(Integer userid);
-    User findByName(String username,String userpwd);
-    void insertUser(User user);
-    List<User> findAllUser();
+    void saveObject(User user);
+    void removeObject(Integer userid);
+    List<User> findUserById(Integer userid);
+    User findUserByName(String username,String userpwd);
+    Map<String,Object> findPageObject(String username,Integer currentPage);
 }

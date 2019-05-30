@@ -1,14 +1,11 @@
+<!--导航栏内容应该是定死的-->
 <div class="nav" th:fragment="nav">
     <ul class="nav-ul">
         <li class="nav-li">
-            <div class="nav-a">
-                <a href="/">首页</a>
-            </div>
+            <a href="/">首页</a>
         </li>
         <li class="nav-li">
-            <div class="nav-a">
-                <a href="/test1">test1</a>
-            </div>
+            <a href="/test1">test1</a>
             <div class="sub-nav hidden">
                 <ul class="sub-ul">
                     <li class="sub-li">
@@ -21,9 +18,7 @@
             </div>
         </li>
         <li class="nav-li">
-            <div class="nav-a">
-                <a href="/test2">test2</a>
-            </div>
+            <a href="/test2">test2</a>
             <div class="sub-nav hidden">
                 <ul class="sub-ul">
                     <li class="sub-li">
@@ -35,5 +30,19 @@
                 </ul>
             </div>
         </li>
+        <li class="nav-li">
+            <a href="/test2">test3</a>
+            <div class="sub-nav hidden">
+                <ul class="sub-ul">
+                    <li class="sub-li">
+                        <a href="/test2/CH" class="sub-a">test3-1</a>
+                    </li>
+                    <li class="sub-li">
+                        <a href="/test2/EN" class="sub-a">test3-2</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </div>
+<script type="text/javascript" src="js/nav.js"></script>

@@ -8,36 +8,40 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class SysServiceImpl implements SysUserService {
     @Resource
     private SysUserDao userDao;
-    
-    public User findById(Integer id){
-        return userDao.findById(id);
-    }
-    public User findByName(String str1,String str2){
-        return userDao.findByName(str1,str2);
-    }
-    public void insertUser(User user){
-        if (userDao == null){
-            System.out.println("userDao is null");
-            return;
+    @Override
+    public void saveObject(User user){
+        try{
+            if(user == null){
+                throw new Exception("saveObject Error:user is null");
+            }
+            int result =  userDao.insertObject(user);
+            if(result < 0){
+                throw new Exception("saveObject Error:can not save user");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
-        if (user == null){
-            System.out.println("用户不能为空");
-        }
-        System.out.println("user:"+user.toString());
-        userDao.insertUser(user);
-        /*int i = userDao.insertUser(user);
-        if (i == -1){
-            System.out.println("新用户保存失败");
-        }else{
-            System.out.println("新用户保存成功");
-        }*/
     }
-    public List<User> findAllUser(){
-       return userDao.findAll();
+    @Override
+    public void removeObject(Integer userid){
+
+    }
+    @Override
+    public List<User> findUserById(Integer userid){
+        return null;
+    }
+    @Override
+    public User findUserByName(String username,String userpwd){
+        return userDao.findObjectByName(username,userpwd);
+    };
+    @Override
+    public Map<String,Object> findPageObject(String username,Integer currentPage){
+        return null;
     }
 }

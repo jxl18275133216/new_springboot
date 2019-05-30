@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 public class SysIndexController {
     @Resource
     private SysUserService sysUserService;
+<<<<<<< HEAD
     @RequestMapping("/")
     public String toIndex(ModelMap map, HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession();
@@ -26,11 +27,19 @@ public class SysIndexController {
         }
         //检查登录状态
         return "index";
+=======
+    @RequestMapping("/user")
+    public String userMenu(){
+        return "user/user";
+>>>>>>> 731981aa0e64f282217424dd5db11460a4b9aa6b
     }
     @RequestMapping("/login.do")
     public String toLogin(ModelMap map){
         return "login";
     }
-
+    @RequestMapping("/menu")
+    public String toMenu(ModelMap map){
+        return "menu";
+    }
 
 }

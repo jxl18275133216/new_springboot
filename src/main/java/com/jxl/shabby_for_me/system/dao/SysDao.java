@@ -11,7 +11,4 @@ public interface SysDao {
     User findById(
             @Param("id")Integer userid
     );
-    User findByName(
-            @Param("name")String username
-    );
 }

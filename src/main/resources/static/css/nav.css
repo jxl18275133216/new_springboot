@@ -1,12 +1,9 @@
 .nav{
     height: 45px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    background-color: red;
+    background-color: #ff1657;
     position: relative;
-}
-.nav-a{
-    border: 1px solid black;
 }
 .nav-ul{
     margin: auto;
@@ -17,15 +14,16 @@
     text-align: center;
     width: 126px;
 }
-/*默认应该全部隐藏，使用js控制，当鼠标悬浮在一级nav时候，显示对应的二级nav*/
+/*默认应该全部隐藏，使用css控制，当鼠标悬浮在一级nav-li时候，显示对应的二级sub-nav*/
 .sub-nav{
-    /*display: none;*/
-    height: 40px;
     width:80%;
-    background-color:royalblue;
-    position: absolute;
     top: 45px;
     left:10%;
+    background-color: #5f9ee1;
+    position: absolute;
+}
+.nav-li:hover .sub-nav{
+    display: block;
 }
 .sub-ul{
 }
@@ -33,4 +31,16 @@
     float: left;
     line-height: 40px;
     margin: auto 20px; /**/
+}
+.navbar-left{
+    position: absolute;
+    height: 400px;
+    width: 100px;
+    top: 200px;
+    left: -90px;
+    background-color: white;
+}
+.navbar-left:hover{
+    left: 15px;
+    transition: left 2s;
 }

@@ -7,8 +7,17 @@ public class User {
     Integer id;
     String username;
     String userpwd;
+    String salt;
     Date createtime;
     Date modifytime;
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
 
     public Integer getId() {
         return id;
