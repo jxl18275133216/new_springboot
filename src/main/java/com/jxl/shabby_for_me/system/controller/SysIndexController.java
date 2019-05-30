@@ -27,14 +27,6 @@ public class SysIndexController {
         //检查登录状态
         return "index";
     }
-    @RequestMapping("/user")
-    public String userMenu(){
-        return "user/user";
-    }
-    @RequestMapping("/regist.do")
-    public String doSaveUser(ModelMap map){
-        return "regist";
-    }
     @RequestMapping("/login.do")
     public String toLogin(ModelMap map){
         return "login";

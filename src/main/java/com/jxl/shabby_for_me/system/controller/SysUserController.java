@@ -3,6 +3,7 @@ package com.jxl.shabby_for_me.system.controller;
 import com.jxl.shabby_for_me.system.entity.User;
 import com.jxl.shabby_for_me.system.service.SysUserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -13,6 +14,16 @@ import javax.annotation.Resource;
 public class SysUserController {
     @Resource
     private SysUserService sysUserService;
+    //登录界面
+    @RequestMapping("login.do")
+    public String userMenu(){
+        return "/user/login";
+    }
+    //注册界面
+    @RequestMapping("/regist.do")
+    public String doSaveUser(ModelMap map){
+        return "/user/regist";
+    }
     //增
     @RequestMapping("addUser.do")
     public String addUser(User user){
