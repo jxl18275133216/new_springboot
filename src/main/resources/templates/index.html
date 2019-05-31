@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <title>首页</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 </head>
 <body>
-    <div th:replace="common/header::header"></div>
-    <div th:replace="common/nav::nav"></div>
-    <div th:replace="common/navbar-left::navbar-left"></div>
-    <div class="contant">
-        <div class="theLast" th:if="${lastModify} != null">
-            最后一次更新的数据:
-            <span class="nomal" th:href="@{lastModifyUrl}"/>
-        </div>
-        <div style="width: 100%;background-color: aqua">
-            <button name="addArea" onclick="addItem()">+</button>
-        </div>
+    <div class="container">
+        <div th:replace="common/header::header"/>
     </div>
-    <div th:replace="common/footer :: footer"></div>
-    <button>111</button>
-    <script type="text/javascript" src="Vue/Vue.js"></script>
+    <div class="container">
+        <div th:replace="common/nav::nav"/>
+    </div>
+    <div class="container">
+        <p th:text="${status}">测试内容</p>
+        <div class="contant">
+            <div class="theLast" th:if="${lastModify} != null">
+                最后一次更新的数据:
+                <span class="nomal" th:href="@{lastModifyUrl}"/>
+            </div>
+            <div style="width: 100%;background-color: aqua">
+                <button class="btn btn-default">+</button>
+            </div>
+        </div>
 
+    </div>
+    <div class="container">
+        <div th:replace="common/footer :: footer"></div>
+    </div>
+    <script type="text/javascript" src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

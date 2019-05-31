@@ -18,16 +18,6 @@ import java.util.List;
 public class SysUserController {
     @Resource
     private SysUserService sysUserService;
-    //登录界面
-    @RequestMapping("login.do")
-    public String userMenu(){
-        return "/user/login";
-    }
-    //注册界面
-    @RequestMapping("/regist.do")
-    public String doSaveUser(ModelMap map){
-        return "/user/regist";
-    }
     //增
     @RequestMapping("addUser.do")
     public String addUser(User user, HttpServletRequest request){
@@ -46,18 +36,17 @@ public class SysUserController {
     public String modifyUser(){
         return "";
     }
-    //查-登录
+    //登录验证
     @RequestMapping("/findUser.do")
-    public String findUser(String username,String userpwd,HttpServletRequest request,RedirectAttributesModelMap map){
+    @ResponseBody
+    public User findUser(String username,String userpwd,HttpServletRequest request){
         User user = sysUserService.findUserByName(username,userpwd);
         HttpSession session = request.getSession();
         if(user != null){
             session.setAttribute("user",user);
-            map.addFlashAttribute("message","登录成功");
-        }else{
-            map.addFlashAttribute("message","账户/密码错误");
+            return user;
         }
-        return "redirect:/";
+        return null;
     }
     //
     @RequestMapping("/processRegist.do")

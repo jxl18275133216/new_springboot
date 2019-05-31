@@ -2,10 +2,6 @@
     margin: 0;
     padding: 0;
 }
-div{
-    margin: 0;
-    padding: 0;
-}
 a{
     text-decoration: none;
     color: green;
@@ -23,4 +19,26 @@ li{
 }
 .block{
     display: block;
+}
+.navbar{
+    background-color: #ff7e32;
+}
+.header{
+
+}
+.nav{
+
+}
+.main{
+    background-color: #abd2e1;
+
+}
+.footer{
+
+}
+.status{
+    width: 100px;
+    position: absolute;
+    top: 70px;
+    right: 5%;
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div class="container header">
+        <div th:replace="common/header::header"/>
+    </div>
+    <div class="container nav">
+        <div th:replace="common/nav::nav"/>
+    </div>
+    <div class="container main">
+        <!--登录和注册使用同一个页面-->
+        <!---通过一个checkbox控制-->
+        <div class="radio">
+            <label for="">
+                是否有账户:
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="chooseModel" value="true" checked="checked">是
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="chooseModel" value="false">否
+            </label>
+        </div>
+        <!--Register-->
+        <form role="form" class="form-horizontal hidden" id="registerForm">
+            <div class="form-group">
+                <label for="name" class="control-label">用户名：</label>
+                <input type="text" class="form-control" placeholder="请输入用户名" id="reg-username">
+                <label for="password" class="control-label">密码：</label>
+                <input type="password" class="form-control" placeholder="请输入密码" id="reg-password">
+            </div>
+            <button class="btn btn-default" id="register-btn">提交</button>
+        </form>
+        <!--Login-->
+        <form role="form" class="form-horizontal" id="loginForm">
+            <div class="form-group">
+                <label for="name" class="control-label">用户名：</label>
+                <input type="text" class="form-control" placeholder="请输入用户名" id="login-username">
+                <label for="password" class="control-label">密码：</label>
+                <input type="password" class="form-control" placeholder="请输入密码" id="login-password">
+            </div>
+            <button class="btn btn-default" onclick="doLogin()">登录</button>
+            <button class="btn btn-default">找回密码</button>
+        </form>
+    </div>
+    <div class="container footer">
+        <div th:replace="common/footer::footer"/>
+    </div>
+    <script type="text/javascript" src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

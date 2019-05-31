@@ -1,3 +1,59 @@
+$(document).ready(function(){
+
+
+});
+
+//选择注册/登录div
+$(':radio').click(function(){
+    var radio = $('input:radio:checked').val();
+    var loginForm = $('#loginForm');
+    var registerForm = $('#registerForm');
+    if(radio == 'true'){//值是个字符串，不是boolean，淦
+        registerForm.addClass("hidden")
+        loginForm.removeClass("hidden");
+    }else{
+        registerForm.removeClass("hidden");
+        loginForm.addClass("hidden")
+    }
+})
+//登录验证
+function doLogin(){
+    var username = $('#login-username').val();
+    var password = $('#login-password').val();
+    var data = {"username":username,"userpwd":password};
+    //验证username及password，二期添加
+    $.post('/user/findUser.do',data,function (result) {
+        if(result){
+            sessionStorage.setItem("user",result);
+            location.href();
+        }else{
+
+        }
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function checkLogin() {
     var username = document.getElementById('login-username').value;
     var userpwd = document.getElementById('login-userpwd').value;
@@ -57,10 +113,7 @@ function findUserByName_ajax(username) {
         }
     }
 }
-
-var regist = new Vue(
-
-);
+;
 
 function logoutUser(){
 
