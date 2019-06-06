@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+</head>
+<body>
+<div class="container header">
+    <div th:replace="common/header::header"/>
+</div>
+<div class="container nav">
+    <div th:replace="common/nav::nav"/>
+</div>
+<div class="container main">
+    <!--用户信息完善界面-->
+    <!--id不可修改，createTime和ModifyTime不可主动修改-->
+    <h3 class="col-md-offset-5">用户信息完善</h3>
+    <p>&nbsp;</p>
+    <form id="user-info" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">姓：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="firstName"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">名：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="lastName"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">电话：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="tel"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">邮箱：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="email"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">联系方式：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="contactType"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">联系号码：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="contactInfo"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">证件：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="documentType"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">证件号：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="documentInfo"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">性别：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="gender"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">出生年月：</label>
+            <span>xxxx-xx-xx</span>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="birthday"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">使用语言：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="theLanguage"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">国家：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="address_Country" list="address_Country">
+                <datalist id="address_Country">
+                    <option value="hehe"></option>
+                    <option value="nimabi"></option>
+                    <option value="日">日</option>
+                    <option value="韩">韩</option>
+                </datalist>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">省/直辖市：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="address_province"></div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-md-2 col-md-offset-2">市/区：</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="address_City"></div>
+        </div>
+        <div class="form-group hidden">
+            <input type="text" disabled="disabled" name="id" th:attr="value=#{user.id}"/>
+        </div>
+        <button id="btn-addInfo" class="btn btn-default col-md-offset-5">提交</button>
+    </form>
+</div>
+<div class="container footer">
+    <div th:replace="common/footer::footer"/>
+</div>
+<script type="text/javascript" src="jQuery/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

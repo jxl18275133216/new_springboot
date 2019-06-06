@@ -76,4 +76,12 @@
                 userpwd = #{userpwd}
         </where>
     </select>
+    <insert id="insertObjectInfo"
+            parameterType="com.jxl.shabby_for_me.system.entity.UserInfo">
+        insert into user_info
+        (id,firstName,lastName,tel,email,contactType,contactInfo,documentType,documentInfo,gender,birthday,theLanguage,address_Country,address_province,address_City,createtime,modifyTime)
+        values
+        (#{id},#{firstName},#{lastName},#{tel},#{email},#{contactType},#{contactInfo},#{documentType},#{documentInfo},#{gender},#{birthday},#{theLanguage},#{address_Country},#{address_province},#{address_City},now(),now())
+    </insert>
+
 </mapper>

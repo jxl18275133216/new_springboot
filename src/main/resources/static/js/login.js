@@ -1,10 +1,9 @@
 $(document).ready(function(){
-
+    checkRadioStatus();
 
 });
-
-//选择注册/登录div
-$(':radio').click(function(){
+//检查当前被选中的radio
+function checkRadioStatus(){
     var radio = $('input:radio:checked').val();
     var loginForm = $('#loginForm');
     var registerForm = $('#registerForm');
@@ -15,25 +14,61 @@ $(':radio').click(function(){
         registerForm.removeClass("hidden");
         loginForm.addClass("hidden")
     }
+
+}
+//radio点击事件
+$(':radio').click(function(){
+    checkRadioStatus();
 })
 //登录验证
-function doLogin(){
+$('#btn-login').click(function (e) {
+    //button在form表单里面的时候会自动提交数据，需要阻止
+    e.preventDefault();
     var username = $('#login-username').val();
     var password = $('#login-password').val();
     var data = {"username":username,"userpwd":password};
+    console.log(data);
     //验证username及password，二期添加
     $.post('/user/findUser.do',data,function (result) {
-        if(result){
-            sessionStorage.setItem("user",result);
-            location.href();
+        console.log(result)
+        if(result.status == 1){
+            location.href = '/';
         }else{
-
+            console.log(result.message)
+            alert('登录失败');
         }
     })
-}
+})
+//注册
+$('#btn-register').click(function (e) {
+    e.preventDefault();
+    var username = $('#reg-username').val();
+    var userpwd = $('#reg-password').val();
+    var data = {"username":username,"userpwd":userpwd}
+    console.log(data)
+    $.post('/user/addUser.do',data,function (result) {
+        if(result.status == 1){
+            location.href = "/";
+        }else{
+            console.log(result.message);
+        }
+    })
+})
+//退出登录
+$('#btn-logout').click(function () {
+    $.post('/clearSession.do',function () {
+        console.log(1111)
+        location.href = "/";
+    })
+})
+//城市联动
 
-
-
+//修改 or 添加 userInfo
+$('#btn-addInfo').click(function (e) {
+    e.preventDefault();
+    var id = $('#userID').val();
+    alert(id);
+})
 
 
 

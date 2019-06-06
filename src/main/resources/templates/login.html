@@ -16,7 +16,7 @@
     <div class="container main">
         <!--登录和注册使用同一个页面-->
         <!---通过一个checkbox控制-->
-        <div class="radio">
+        <div class="radio col-md-offset-4">
             <label for="">
                 是否有账户:
             </label>
@@ -30,22 +30,32 @@
         <!--Register-->
         <form role="form" class="form-horizontal hidden" id="registerForm">
             <div class="form-group">
-                <label for="name" class="control-label">用户名：</label>
-                <input type="text" class="form-control" placeholder="请输入用户名" id="reg-username">
-                <label for="password" class="control-label">密码：</label>
-                <input type="password" class="form-control" placeholder="请输入密码" id="reg-password">
+                <label for="name" class="control-label col-md-1">用户名：</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="请输入用户名" id="reg-username"></div>
             </div>
-            <button class="btn btn-default" id="register-btn">提交</button>
+            <div class="form-group">
+                <label for="password" class="control-label col-md-1">密码：</label>
+                <div class="col-md-10">
+                    <input type="password" class="form-control" placeholder="请输入密码" id="reg-password"></div>
+            </div>
+            <button class="btn btn-default col-md-offset-1" id="btn-register">提交</button>
         </form>
         <!--Login-->
         <form role="form" class="form-horizontal" id="loginForm">
             <div class="form-group">
-                <label for="name" class="control-label">用户名：</label>
-                <input type="text" class="form-control" placeholder="请输入用户名" id="login-username">
-                <label for="password" class="control-label">密码：</label>
-                <input type="password" class="form-control" placeholder="请输入密码" id="login-password">
+                <label for="name" class="control-label col-md-1">用户名：</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="请输入用户名" id="login-username">
+                </div>
             </div>
-            <button class="btn btn-default" onclick="doLogin()">登录</button>
+            <div class="form-group">
+                <label for="password" class="control-label col-md-1">密码：</label>
+                <div class="col-md-10">
+                    <input type="password" class="form-control" placeholder="请输入密码" id="login-password">
+                </div>
+            </div>
+            <button class="btn btn-default col-md-offset-1" id="btn-login">登录</button>
             <button class="btn btn-default">找回密码</button>
         </form>
     </div>

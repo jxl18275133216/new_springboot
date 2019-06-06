@@ -24,4 +24,7 @@ public interface SysUserDao extends BasicDao<User>{
             @Param("username")String username,
             @Param("userpwd")String userpwd
     );
+    int insertObjectInfo(
+            @Param("user")User user
+    );
 }

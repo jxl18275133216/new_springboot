@@ -4,12 +4,20 @@
             MY HOME
         </h1>
     </div>
-    <div class="status" th:if="${user} == null">
-        <a href="/login.do">登录</a>/<a href="/login.do">注册</a>
+    <div class="user-status" th:if="${user} == null">
+        <a href="/login.do">登录</a>/<a href="/register.do">注册</a>
     </div>
-    <div class="status" th:if="${user} != null">
-        <a href="" class="btn-group">
-            <label th:text="${user.username}">用户名</label>
-        </a>
+    <div class="user-status" th:if="${user} != null">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"  th:text="${user.username}">用户名</button>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href="/menu.do">用户中心</a>
+                </li>
+                <li>
+                    <a href="" id="btn-logout">退出登录</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </header>

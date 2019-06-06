@@ -14,7 +14,7 @@ public class UserInfo {
     String documentInfo;
     Integer gender;
     Date birthday;
-    String language;
+    String theLanguage;
     String address_Country;
     String address_province;
     String address_City;
@@ -109,12 +109,12 @@ public class UserInfo {
         this.birthday = birthday;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getTheLanguage() {
+        return theLanguage;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setTheLanguage(String language) {
+        this.theLanguage = language;
     }
 
     public String getAddress_Country() {
@@ -171,7 +171,7 @@ public class UserInfo {
                 ", documentInfo='" + documentInfo + '\'' +
                 ", gender=" + gender +
                 ", birthday=" + birthday +
-                ", language='" + language + '\'' +
+                ", language='" + theLanguage + '\'' +
                 ", address_Country='" + address_Country + '\'' +
                 ", address_province='" + address_province + '\'' +
                 ", address_City='" + address_City + '\'' +

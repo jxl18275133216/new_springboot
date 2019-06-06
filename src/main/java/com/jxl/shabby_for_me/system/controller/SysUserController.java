@@ -1,5 +1,6 @@
 package com.jxl.shabby_for_me.system.controller;
 
+import com.jxl.shabby_for_me.common.untils.JsonResult;
 import com.jxl.shabby_for_me.system.entity.User;
 import com.jxl.shabby_for_me.system.service.SysUserService;
 import org.springframework.stereotype.Controller;
@@ -19,12 +20,15 @@ public class SysUserController {
     @Resource
     private SysUserService sysUserService;
     //增
-    @RequestMapping("addUser.do")
-    public String addUser(User user, HttpServletRequest request){
-        HttpSession session = request.getSession();
+    @RequestMapping("/addUser.do")
+    @ResponseBody
+    public JsonResult addUser(String username,String userpwd,HttpSession session){
+        User user = new User();
+        user.setUsername(username);
+        user.setUserpwd(userpwd);
         sysUserService.saveObject(user);
         session.setAttribute("user",user);
-        return "redirect:/";
+        return new JsonResult();
     }
     //删
     @RequestMapping("/deleteUser.do")
@@ -39,30 +43,13 @@ public class SysUserController {
     //登录验证
     @RequestMapping("/findUser.do")
     @ResponseBody
-    public User findUser(String username,String userpwd,HttpServletRequest request){
+    public JsonResult findUser(String username,String userpwd,HttpServletRequest request){
         User user = sysUserService.findUserByName(username,userpwd);
         HttpSession session = request.getSession();
         if(user != null){
             session.setAttribute("user",user);
-            return user;
+            return new JsonResult(user);
         }
-        return null;
-    }
-    //
-    @RequestMapping("/processRegist.do")
-    public String doProcessRegistUser(User user){
-
-        return "redirect:/";
-    }
-    @RequestMapping("/processCheckRegist.do")
-    @ResponseBody
-    public boolean doCheckRegist(String username,String userpwd){
-        System.out.println(username);
-        List<User> users = sysUserService.findUserById(1);
-        if (users != null){
-            return false;
-        }else{
-            return true;
-        }
+        return new JsonResult();
     }
 }
