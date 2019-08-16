@@ -42,11 +42,12 @@ $('#btn-login').click(function (e) {
 //注册
 $('#btn-register').click(function (e) {
     e.preventDefault();
-    var username = $('#reg-username').val();
-    var userpwd = $('#reg-password').val();
-    var data = {"username":username,"userpwd":userpwd}
+    var username = $('#reg-cname').val();
+    var userpwd = $('#reg-cpassword').val();
+    var data = {"cname":username,"cpassword":userpwd}
     console.log(data)
-    $.post('/user/addUser.do',data,function (result) {
+    $.post('/customer/addUser.do',data,function (result) {
+        alert(result);
         if(result.status == 1){
             location.href = "/";
         }else{

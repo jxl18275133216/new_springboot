@@ -41,6 +41,18 @@ spring:
     #prefix: classpath:**/templates/
     #suffix: .html
     template-resolver-order:
+  redis:
+    host: localhost
+    port: 6379
+    jedis: #jedis
+      pool:
+        max-wait: 10000 #连接池最大等待时间，负数表示没有限制
+        max-active: 100 #最大连接数，负数表示没有限制
+        max-idle: 20 #最大空闲数
+        min-idle: 0 #最小空闲数
+    timeout: 30000 #超时时间
+    password: null
+
 jackson:
   date-format: yyyy-MM-dd HH:mm:ss
   time-zone: GMT+8
@@ -50,5 +62,7 @@ mybatis:
   type-aliases-package: com.jxl.shabby_for_me.common.entity.*
   #刷新mapper,调试器
   refreh-mapper: true
+
+
 
 
