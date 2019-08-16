@@ -60,11 +60,8 @@ public class IndexController {
     //退出登录，清空session
     @RequestMapping("/clearSession.do")
     @ResponseBody
-    public JsonResult clearSession(HttpSession session){
-        Enumeration<String> em  = session.getAttributeNames();
-        while (em.hasMoreElements()){
-            session.removeAttribute(em.nextElement());
-        }
-        return new JsonResult();
+    public String clearSession(HttpSession session){
+        session.invalidate();//使session无效化
+        return "/";
     }
 }

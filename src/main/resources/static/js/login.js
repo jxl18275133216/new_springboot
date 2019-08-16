@@ -24,12 +24,12 @@ $(':radio').click(function(){
 $('#btn-login').click(function (e) {
     //button在form表单里面的时候会自动提交数据，需要阻止
     e.preventDefault();
-    var username = $('#login-username').val();
-    var password = $('#login-password').val();
-    var data = {"username":username,"userpwd":password};
+    var username = $('#login-cname').val();
+    var password = $('#login-cpassword').val();
+    var data = {"cname":username,"cpassword":password};
     console.log(data);
     //验证username及password，二期添加
-    $.post('/user/findUser.do',data,function (result) {
+    $.post('/customer/findUser.do',data,function (result) {
         console.log(result)
         if(result.status == 1){
             location.href = '/';
@@ -42,12 +42,12 @@ $('#btn-login').click(function (e) {
 //注册
 $('#btn-register').click(function (e) {
     e.preventDefault();
-    var username = $('#reg-cname').val();
-    var userpwd = $('#reg-cpassword').val();
-    var data = {"cname":username,"cpassword":userpwd}
+    var username = $('#reg-username').val();
+    var userpwd = $('#reg-userpwd').val();
+    var data = {"username":username,"userpwd":userpwd}
     console.log(data)
-    $.post('/customer/addUser.do',data,function (result) {
-        alert(result);
+    $.post('/user/addUser.do',data,function (result) {
+        console.log(result);
         if(result.status == 1){
             location.href = "/";
         }else{
@@ -57,8 +57,8 @@ $('#btn-register').click(function (e) {
 })
 //退出登录
 $('#btn-logout').click(function () {
-    $.post('/clearSession.do',function () {
-        console.log(1111)
+    $.post('/user/logout.do',function () {
+        console.log('clear Session before lougout')
         location.href = "/";
     })
 })

@@ -17,7 +17,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class SysUserController {
-    @Resource //Resource是J2EE的注解，默认按照名称自动装备BEAN
+    /*@Resource //Resource是J2EE的注解，默认按照名称自动装备BEAN
     private SysUserService sysUserService;
     //增
     @RequestMapping("/addUser.do")
@@ -52,4 +52,5 @@ public class SysUserController {
         }
         return new JsonResult();
     }
+    */
 }

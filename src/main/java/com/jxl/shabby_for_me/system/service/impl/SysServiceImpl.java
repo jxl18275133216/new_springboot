@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class SysServiceImpl implements SysUserService {
-    @Resource
+public class SysServiceImpl {
+    /*@Resource
     private SysUserDao userDao;
     @Override
     public void saveObject(User user){
@@ -56,5 +56,5 @@ public class SysServiceImpl implements SysUserService {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
+    }*/
 }
